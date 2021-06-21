@@ -263,18 +263,16 @@ li i {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 3px;
+  align-items: center;
   font-weight: bold;
 
 }
 
-.emballage .droite .btn a{
+.emballage .droite .btn .boutton{
   color: #fff;
   display: block;
   font-size: 14px;
+  text-decoration: none;
+  background-color: #494f57;
 }
-
-
-/* you can toggle the media screen view accordingly by changing the (max-width: px) to your convenience */
-
-/* Thanks to Computer Conversations */
   

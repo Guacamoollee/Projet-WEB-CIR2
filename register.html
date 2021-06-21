@@ -20,44 +20,59 @@
             <a class="cta" href="register.html">Login</a>
         </header>
         <main>
+            <!--Div qui englobe tout le formulaire de connexion et d'enregistrement-->
             <div class="tout">
                 <div class="emballage">
+                <!--partie gauche avec un fond et un titre-->
                 <div class="gauche">
                     <h3>Covoit ISEN</h3>   
                 </div>
+                <!--partie droite qui permet de se connecter ou de se enregistrer-->
                 <div class="droite">
+                    <!--partie qui permet de switcher entre l'enregistrement et la connexion-->
                     <div class="tab">
                         <ul>
                             <li class="enregistrement_li">Enregistrement</li>
                             <li class="connexion_li">Connexion</li>
                         </ul>
                     </div>
+                    <!--Partie enregistrement -->
                     <form class="enregistrement" method="POST" action="php/api.php/utilisateur">
+                        <!--saisie du nom-->
                         <div class="champ_saisie">
                             <input type="text" placeholder="Nom" class="input" required>
                         </div>
+                        <!--saisie du pseudo-->
                         <div class="champ_saisie">
                             <input type="text" placeholder="Pseudo" class="input" required>
                         </div>
+                        <!--saisie du numéro de tel-->
                         <div class="champ_saisie">
                             <input type="text" placeholder="Numéro de téléphone" class="input" required>
                         </div>
+                        <!--saisie du mdp-->
                         <div class="champ_saisie">
                             <input type="password" placeholder="Mot de passe" class="input" required>
                         </div>
+                        <!--confirmation du mdp-->
                         <div class="champ_saisie">
                             <input type="password" placeholder="Confirmer" class="input" required>
                         </div>
-                        <div class="btn"><button id="inscription">Enregistrement</button></div>
+                        <!--bouton inscription-->
+                        <div class="btn"><button id="inscription" class="boutton">Enregistrement</button></div>
                     </form>
+                    <!--Partie enregistrement -->
                     <form class="connexion" method="POST" action="php/api.php/utilisateur">
+                        <!--saisie du pseudo-->
                         <div class="champ_saisie">
                             <input type="text" placeholder="Pseudo" class="input" required>
                         </div>
+                        <!--saisie du mdp-->
                         <div class="champ_saisie">
                             <input type="password" placeholder="Mot de passe" class="input" required>
                         </div>
-                        <div class="btn"><button id="connexion">Connexion</button></div>
+                        <!--bouton connexion-->
+                        <div class="btn"><button id="connexion" class="boutton">Connexion</button></div>
                     </form>
                 </div>
                 </div>
@@ -81,7 +96,7 @@
           
               
           
-          <!--  for contact us info -->
+          <!--contact-->
               <div class="footer-items">
                 <h3>Contact us</h3>
                 <div class="border1"></div>
@@ -89,17 +104,8 @@
                     <li><i class="fa fa-phone" aria-hidden="true"></i>0784058819</li>
                     <li><i class="fa fa-envelope" aria-hidden="true"></i>tpehippo@gmail.com</li>
                   </ul> 
-                
-          <!--   for social links -->
-                  <div class="social-media">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-google-plus-square"></i></a>
-                  </div> 
               </div>
             </div>
-            
-          
           </div>
       <script src="register.js"></script>
       <script src="ajax.js"></script>

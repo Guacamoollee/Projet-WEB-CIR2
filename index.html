@@ -20,10 +20,12 @@
             <a class="cta" href="register.html">Login</a>
         </header>
         <main>
+
           <br/>
+
           <form class="formulaire">
             <p>Aller ou partir:</p>
-
+            <!--bouton radio entre aller vers un isen ou partir d'un isen-->
             <div>
               <input type="radio" id="Aller" name="drone" value="Aller"checked>
               <label for="Aller">Aller</label>
@@ -33,32 +35,48 @@
               <input type="radio" id="Partir" name="drone" value="Partir">
               <label for="Partir">Partir</label>
             </div>
+
             <br/>
+
             <div id ="formulaire"></div>
+
             <p>veuillez choisir votre site</p>
+            <!--menu deroulant connecté à la base de données pour recuperer les sites isens-->
             <select name="Site de depart" id="depart"> 
               <option value="">veuillez choisir</option>
               <option value="Brest">Brest</option>
             </select>
+
             <br/> <br/>
+
             <p>veuillez choisir votre site</p>
+            <!--menu deroulant connecté à la base de données pour recuperer les sites isens-->
             <select name="Site de depart" id="depart"> 
               <option value="">veuillez choisir</option>
               <option value="Brest">Brest</option>
             </select>
+
             <br/> <br/>
-            <label for="start">Date</label>
+
+            <label for="start">Date</label> 
+
             <br/>
-            <input type="date" id="start" name="trip-start" value="2020-01-01" min="2020-01-01" max="2022-12-31">
+            <!--Choix de la date -->
+            <input type="date" id="start" name="trip-start" value="2020-01-01" min="2020-01-01" max="2022-12-31"> 
+
             <br/> <br/>
+
             <p>Nombre de place:</p>
-            <input type="number" id="place" name="place" min="1" max="5">
+            <!--Choix du nombre de place que l'on souhaite reserver -->
+            <input type="number" id="place" name="place" min="1" max="5"> 
+
             <br/> <br/>
-            <button>Rechercher</button>
+            <!--bouton qui lance la recherche et qui ouvre la page de resultat-->
+            <button>Rechercher</button> 
           </form>
-          
         </main>
         <br/><br/><br/><br/><br/><br/><br/><br/>
+        <!--pied de page avec les differentes pages-->
         <div class="footer">
             <div class="inner-footer">
               <div class="footer-items">
@@ -75,26 +93,17 @@
           
               
           
-          <!--  for contact us info -->
+              <!--contact -->
               <div class="footer-items">
                 <h3>Contact us</h3>
                 <div class="border1"></div>
                   <ul>
                     <li><i class="fa fa-phone" aria-hidden="true"></i>0784058819</li>
                     <li><i class="fa fa-envelope" aria-hidden="true"></i>tpehippo@gmail.com</li>
-                  </ul> 
-                
-          <!--   for social links -->
-                  <div class="social-media">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-google-plus-square"></i></a>
-                  </div> 
+                  </ul>
               </div>
             </div>
-            
-          
-          </div>
-      <script src="index.js"></script>
+        </div>
+        <script src="index.js"></script>
     </body>
 </html>

@@ -4,7 +4,7 @@
     <head>
         <title>Accueil</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="index.css"/>
+        <link rel="stylesheet" href="proposer.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
@@ -20,39 +20,56 @@
         </header>
         <main>
           <br/>
+          <!--Formulaire pour proposer un trajet-->
           <form class="formulaire">
             <label for="start">Date de départ</label>
             <br/>
+
+            <!--Date de départ-->
             <input type="date" id="départ" name="date_depart" value="2020-01-01" min="2020-01-01" max="2022-12-31">
             <br/><br/>
             <label for="start">Date de d'arrivée</label>
             <br/>
+
+            <!--Date de d'arrivée-->
             <input type="date" id="arrivée" name="date_arrivée" value="2020-01-01" min="2020-01-01" max="2022-12-31">
             <br/><br/>
             <label for="start">Heure de départ</label>
             <br/>
+
+            <!--heure de départ-->
             <input type="time" id="heure_départ" name="heure_départ" >
             <br/><br/>
             <label for="start">Heure d'arrivée</label>
             <br/>
+
+            <!--heure d'arrivée-->
             <input type="time" id="heure_arrivée" name="heure_arrivée" >
             <br/> <br/>
+
             <p>veuillez choisir votre site</p>
+            <!--menu déroulant connecté à la base donnée avec les différents site isen-->
             <select name="Site de depart" id="depart"> 
               <option value="">veuillez choisir</option>
               <option value="Brest">Brest</option>
             </select>
             <br/> <br/>
+
+             <!--menu déroulant connecté à la base donnée avec les différents site isen-->
             <p>veuillez choisir votre site</p>
             <select name="Site d'arrivée" id="arrivée"> 
               <option value="">veuillez choisir</option>
               <option value="Brest">Brest</option>
             </select>
             <br/> <br/>
+
             <p>Nombre de place:</p>
+            <!--choix du nombre de place disponible pour le trajet-->
             <input type="number" id="place" name="place" min="1" max="5">
             <br/><br/>
+            
             <p>Prix:</p>
+            <!--prix par personne-->
             <input id="prix" name="prix">
             <br/> <br/>
             <button>Valider</button>
@@ -60,37 +77,31 @@
           
         </main>
         <br/><br/><br/><br/><br/><br/><br/><br/>
+        <!--pied de page-->
         <div class="footer">
             <div class="inner-footer">
               <div class="footer-items">
                 <h1>Covoit ISEN</h1>
               </div>
+          
+              <!--pied de page avec les differentes pages-->
               <div class="footer-items">
                 <h3>Liens</h3>
-                <div class="border1"></div> <!--for the underline -->
+                <div class="border1"></div> 
                   <ul>
                     <a href="index.html"><li>Rechercher un trajet</li></a>
                     <a href="Proposer.html"><li>Proposer un trajet</li></a>
                   </ul>
               </div>
           
-              
-          
-          <!--  for contact us info -->
+          <!-- contact  -->
               <div class="footer-items">
                 <h3>Contact us</h3>
                 <div class="border1"></div>
                   <ul>
                     <li><i class="fa fa-phone" aria-hidden="true"></i>0784058819</li>
                     <li><i class="fa fa-envelope" aria-hidden="true"></i>tpehippo@gmail.com</li>
-                  </ul> 
-                
-          <!--   for social links -->
-                  <div class="social-media">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-google-plus-square"></i></a>
-                  </div> 
+                  </ul>     
               </div>
             </div>
             
