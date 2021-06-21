@@ -22,7 +22,41 @@
         <main>
           <br/>
           <form>
-            
+            <label for="start">Date de départ</label>
+            <br/>
+            <input type="date" id="départ" name="date_depart" value="2020-01-01" min="2020-01-01" max="2022-12-31">
+            <br/><br/>
+            <label for="start">Date de d'arrivée</label>
+            <br/>
+            <input type="date" id="arrivée" name="date_arrivée" value="2020-01-01" min="2020-01-01" max="2022-12-31">
+            <br/><br/>
+            <label for="start">Heure de départ</label>
+            <br/>
+            <input type="time" id="heure_départ" name="heure_départ" >
+            <br/><br/>
+            <label for="start">Heure d'arrivée</label>
+            <br/>
+            <input type="time" id="heure_arrivée" name="heure_arrivée" >
+            <br/> <br/>
+            <p>veuillez choisir votre site</p>
+            <select name="Site de depart" id="depart"> 
+              <option value="">veuillez choisir</option>
+              <option value="Brest">Brest</option>
+            </select>
+            <br/> <br/>
+            <p>veuillez choisir votre site</p>
+            <select name="Site d'arrivée" id="arrivée"> 
+              <option value="">veuillez choisir</option>
+              <option value="Brest">Brest</option>
+            </select>
+            <br/> <br/>
+            <p>Nombre de place:</p>
+            <input type="number" id="place" name="place" min="1" max="5">
+            <br/><br/>
+            <p>Prix:</p>
+            <input id="prix" name="prix">
+            <br/> <br/>
+            <button>Valider</button>
           </form>
           
         </main>

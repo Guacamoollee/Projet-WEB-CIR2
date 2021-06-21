@@ -3,7 +3,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
+    
   }
  
   img{
@@ -54,7 +54,6 @@
   .cta {
     padding: 9px 25px;
     background-color: rgba(248, 148, 6, 1);
-    justify-content: space-between;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -65,28 +64,6 @@
     background-color: rgba(248, 148, 6, 0.8);
   }
   
-  
- 
- .Redbull{
-    margin-left:100px;
-    width: 7%;
-    height: 7%;
- }
-
- .text_actus{
-   font-size: 25px;
- }
-
- table{
-  position: absolute;
-  margin-left: 70%;
-  top:35%;
-  border: solid;
-  border-collapse: separate;
-  border-spacing: 60px;
-  background: none;
-}
-
 /* FOOTER */
 .footer {
 	width: 100%;
@@ -184,27 +161,24 @@ li i {
 
 .footer-bottom {
 	padding: 10px;
-	background: #00121b;
+	background: #24252a;
 	color: #fff;
 	font-size: 12px;
 	text-align: center;
 }
 
-/* for tablet mode view */
-
-@media screen and (max-width: 1275px) {
-	.footer-items {
-		width: 50%;
-	}
+.formulaire{
+  margin-left: 45%;
+  margin-top: 100px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.24em;
+  
+}
+button, input, select, textarea {
+  font-family: "Montserrat", sans-serif;
+  font-size   : 100%;
 }
 
-/* for mobile screen view */
-
-@media screen and (max-width: 660px) {
-	.footer-items {
-		width: 100%;
-	}
-}
 
 /* you can toggle the media screen view accordingly by changing the (max-width: px) to your convenience */
 
