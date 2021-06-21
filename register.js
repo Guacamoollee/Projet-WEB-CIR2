@@ -14,3 +14,14 @@ $(".enregistrement_li").click(function(){
   $(".enregistrement").show();
    $(".connexion").hide();
 })
+
+$('#tweet-add').submit((event) =>
+  {
+    event.preventDefault();
+    ajaxRequest('POST', 'php/api.php/utilisateur', () =>
+      {
+
+      },
+    //$('#tweet').val('');
+  }
+);
