@@ -13,6 +13,7 @@
     $requete = substr($_SERVER['PATH_INFO'], 1); // recupère le chemin
     $requete = explode('/', $requete); //découpe la requete
     $resourceDemande = array_shift($requete);
+    // var_dump($resourceDemande);
 
     $data = false;
 
@@ -81,13 +82,45 @@
                 $data = databaseRequest($db, "SELECT * FROM trajets WHERE id_trajet = :id_trajet;",[":id_trajet"=> $resourceDemande]);
                 // echo 'test';
             }
-            else if(isset($_GET['destination'])){
-                $data = databaseRequest($db, "SELECT * FROM trajets t JOIN ville v ON t.code_insee = v.code_insee WHERE v.commune LIKE ':destination' AND t.depart_isen = 1;",[":destination"=> $_GET['destination']]);
+            else if(isset($_GET['destination'])){// si il n'y à rien cela veux daire que l'on fait une recherche par départ ou destination
+                $data = databaseRequest($db, "SELECT * FROM trajets t JOIN ville v ON t.code_insee = v.code_insee WHERE v.commune LIKE :destination AND t.depart_isen = 0;",[":destination"=> $_GET['destination']]);
                 // echo 'TEST';
                 // echo $_GET['destination'];
                 // echo $data;
             }
+            else if(isset($_GET['depart'])){
+                $data = databaseRequest($db, "SELECT * FROM trajets t JOIN ville v ON t.code_insee = v.code_insee WHERE v.commune LIKE :depart AND t.depart_isen = 1;",[":depart"=> $_GET['depart']]);
+            }
         }
+        /*else if($methodeRequete == 'POST'){
+
+            $date_heure_depart = $_POST['date_heure_depart'];
+            $date_heure_arrivee = $_POST['date_heure_arrivee'];
+            $nb_places_max = $_POST['nb_places_max'];
+            $nb_places_rest = $_POST['nb_places_rest'];
+            $prix = $_POST['prix'];
+            $adresse = $_POST['adresse'];
+            $depart_isen = $_POST['depart_isen'];
+            $code_insee = $_POST['code_insee'];
+            $site_isen = $_POST['site_isen'];
+            $pseudo_conducteur = $_POST['pseudo_conducteur'];
+
+            $data = databaseRequest($db, "INSERT INTO trajets(date_heure_depart,date_heure_arrivee,nb_places_max,nb_places_restantes,prix,adresse,depart_isen,code_insee,site_isen,pseudo) VALUES (
+                :date_heure_depart,
+                :date_heure_arrivee,:
+                :nb_places_max,
+                :nb_places_restantes,
+                :prix,
+                :adresse,
+                :depart_isen,
+                :code_insee,
+                :site_isen,
+                ;pseudo); COMMIT;",[
+                
+                ":date_heure_depart"=> $_GET['depart']
+
+            ]);
+        }*/
     }
 
 
