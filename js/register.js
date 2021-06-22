@@ -1,3 +1,5 @@
+'use strict'
+
 $(".connexion").hide();
 $(".enregistrement_li").addClass("active");
 
@@ -15,17 +17,12 @@ $(".enregistrement_li").click(function(){
    $(".connexion").hide();
 })
 
-/*$('#tweet-add').submit((event) =>
-  {
-    event.preventDefault();
-    ajaxRequest('POST', 'php/api.php/utilisateur', () =>
-      {
-
-      },
-    //$('#tweet').val('');
-  }
-);*/
 $('#inscription').submit((event) =>  {
-  event.preventDefault();
-  ajaxRequest('POST', 'php/api.php/utilisateur', null);
-})
+  //event.preventDefault();
+  console.log('Test');
+  ajaxRequest('POST', '../php/api/v1/api.php/utilisateur', (data)=>{
+    console.log('data'+ data);
+    console.log('Test');
+  },'pseudo=' + $('#pseudo').val() + '&nom=' + $('#nom').val() + '&tel=' + $('#tel').val() + '&mdp=' + $('#mdp').val());
+  return false; //empèche le reload de la page
+});
