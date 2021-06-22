@@ -11,7 +11,7 @@
     </head>
     <body>
         <header>
-            <a class="logo" href="#"><img src="LOGO_Hippo/LOGO_Hippo_2_White.png" alt="logo"></a>
+            <a class="logo" href="#"><img src="LOGO_Hippo_2_White.png" alt="logo"></a>
             <nav>
                 <ul class="nav__links">
                     <li><a href="index.html">Rechercher un trajet</a></li>
@@ -26,8 +26,10 @@
                 <div class="emballage">
                 <!--partie gauche avec un fond et un titre-->
                 <div class="gauche">
-                    <h3>Covoit ISEN</h3>   
+                    <h3>Covoit ISEN</h3> 
+                    <img src="LOGO_Hippo_2_White.png" alt="Logo_image">
                 </div>
+
                 <!--partie droite qui permet de se connecter ou de se enregistrer-->
                 <div class="droite">
                     <!--partie qui permet de switcher entre l'enregistrement et la connexion-->
@@ -37,6 +39,7 @@
                             <li class="connexion_li">Connexion</li>
                         </ul>
                     </div>
+
                     <!--Partie enregistrement -->
                     <form class="enregistrement" method="POST" action="php/api.php/utilisateur">
                         <!--saisie du nom-->
@@ -62,6 +65,7 @@
                         <!--bouton inscription-->
                         <div class="btn"><button id="inscription" class="boutton">Enregistrement</button></div>
                     </form>
+
                     <!--Partie enregistrement -->
                     <form class="connexion" method="POST" action="php/api.php/utilisateur">
                         <!--saisie du pseudo-->
@@ -75,6 +79,7 @@
                         <!--bouton connexion-->
                         <div class="btn"><button id="connexion" class="boutton">Connexion</button></div>
                     </form>
+                    
                 </div>
                 </div>
             </div>

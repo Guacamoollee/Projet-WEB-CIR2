@@ -25,3 +25,7 @@ $(".enregistrement_li").click(function(){
     //$('#tweet').val('');
   }
 );*/
+$('#inscription').submit((event) =>  {
+  event.preventDefault();
+  ajaxRequest('POST', 'php/api.php/utilisateur', null);
+})
