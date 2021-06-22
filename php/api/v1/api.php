@@ -43,7 +43,7 @@
             }
         }        
     }
-
+/*
     else if($resourceDemande == 'utilisateur'){
 
         if($methodeRequete == 'GET'){
@@ -51,18 +51,16 @@
             $data = databaseRequest($db, "SELECT * FROM utilisateurs WHERE pseudo =:pseudo;",[":pseudo"=> $resourceDemande]);
             //a modif si besoin recherche partiel
         }
-        /*
-        else if($methodeRequete == 'POST'){ //pas réussi à tester
+        
+        else if($methodeRequete == 'POST'){
             
-            $login = $_POST['login'];
+            $login = $_POST['pseudo'];
             $nom = $_POST['nom'];
             $tel = $_POST['tel'];
             $mdp = $_POST['mdp'];
 
-            echo '<pre>';
-            var_dump($_POST);
-            echo '</pre>',
-
+            // var_dump($_POST);
+            
             $data = databaseRequest($db, "INSERT INTO utilisateurs(pseudo,nom_utilisateur,telephone,hash_mdp) VALUES (':pseudo,:nom,:tel,:mdp'); COMMIT;",[
                 ":pseudo"=>$login,
                 ":nom"=>$nom,
@@ -71,9 +69,9 @@
             ]);
 
         }
-        */
+        
     }
-
+*/
     else if($resourceDemande == 'trajets'){
 
         if($methodeRequete == 'GET'){
@@ -81,9 +79,13 @@
             //echo $resourceDemande;
             if($resourceDemande != ''){//si il y à quelque chose (un id) on affiche le trajet en question
                 $data = databaseRequest($db, "SELECT * FROM trajets WHERE id_trajet = :id_trajet;",[":id_trajet"=> $resourceDemande]);
+                // echo 'test';
             }
-            else if(){
-                
+            else if(isset($_GET['destination'])){
+                $data = databaseRequest($db, "SELECT * FROM trajets t JOIN ville v ON t.code_insee = v.code_insee WHERE v.commune LIKE ':destination' AND t.depart_isen = 1;",[":destination"=> $_GET['destination']]);
+                // echo 'TEST';
+                // echo $_GET['destination'];
+                // echo $data;
             }
         }
     }
