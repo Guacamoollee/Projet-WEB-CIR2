@@ -7,12 +7,16 @@
         <link rel="stylesheet" href="../css/index.css"/>
         <link rel="stylesheet" href="../css/formulaire.css">
         <link rel="stylesheet" href="../css/en_tete.css">
+        <link rel="icon" type="image/png" sizes="16x16" href="../Logo/LOGO_Hippo_2_White.png">
         <script src="../js/index.js" defer></script>
+        <script src="../js/recherche.js" defer></script>
         <script src="../js/site.js" defer></script>
+        <script src="../js/ajax.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
         <header>
+
             <a class="logo" href="../html/index.html"><img src="../Logo/LOGO_Hippo_2_White.png" alt="logo"></a>
             <nav>
                 <ul class="nav__links">
@@ -47,17 +51,13 @@
             <!--menu deroulant connecté à la base de données pour recuperer les sites isens-->
             <select name="Site de depart" id="depart"> 
               <option value="">veuillez choisir</option>
-              <option value="Brest">Brest</option>
             </select>
 
             <br/> <br/>
 
-            <p>veuillez choisir votre site</p>
+            <p>Addresse</p>
             <!--menu deroulant connecté à la base de données pour recuperer les sites isens-->
-            <select name="Site de depart" id="depart"> 
-              <option value="">veuillez choisir</option>
-              <option value="Brest">Brest</option>
-            </select>
+            <input type="text" id="addr">
 
             <br/> <br/>
 
@@ -65,7 +65,7 @@
 
             <br/>
             <!--Choix de la date -->
-            <input type="date" id="start" name="trip-start" value="2020-01-01" min="2020-01-01" max="2022-12-31"> 
+            <input type="date" id="start" name="trip-start" value="2021-01-01" min="2021-01-01" max="2022-12-31"> 
 
             <br/> <br/>
 
@@ -75,10 +75,14 @@
 
             <br/> <br/>
             <!--bouton qui lance la recherche et qui ouvre la page de resultat-->
-            <button >Rechercher</button> 
+            <button id="boutton" >Rechercher</button> 
           </form>
+          
+          <div id="resultat" >
+          </div>
         </main>
         <br/><br/><br/><br/><br/><br/><br/><br/>
+
         <!--pied de page avec les differentes pages-->
         <div class="footer">
             <div class="inner-footer">
