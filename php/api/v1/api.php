@@ -83,16 +83,22 @@
                 // echo 'test';
             }
             else if(isset($_GET['destination'])){// si il n'y à rien cela veux daire que l'on fait une recherche par départ ou destination
-                $data = databaseRequest($db, "SELECT * FROM trajets t JOIN ville v ON t.code_insee = v.code_insee WHERE v.commune LIKE :destination AND t.depart_isen = 0;",[":destination"=> $_GET['destination']]);
+                $data = databaseRequest($db, "SELECT * FROM trajets t JOIN ville v ON t.code_insee = v.code_insee WHERE v.commune LIKE :destination AND t.depart_isen = 1;",[":destination"=> $_GET['destination']]);
                 // echo 'TEST';
                 // echo $_GET['destination'];
                 // echo $data;
             }
             else if(isset($_GET['depart'])){
-                $data = databaseRequest($db, "SELECT * FROM trajets t JOIN ville v ON t.code_insee = v.code_insee WHERE v.commune LIKE :depart AND t.depart_isen = 1;",[":depart"=> $_GET['depart']]);
+                $data = databaseRequest($db, "SELECT * FROM trajets t JOIN ville v ON t.code_insee = v.code_insee WHERE v.commune LIKE :depart AND t.depart_isen = 0;",[":depart"=> $_GET['depart']]);
+            }
+            else if(isset($_GET['depart_isen'])){
+                $data = databaseRequest($db, "SELECT * FROM trajets WHERE site_isen LIKE :depart_isen AND depart_isen = 1;",[":depart_isen"=> $_GET['depart_isen']]);
+            }
+            else if(isset($_GET['destination_isen'])){
+                $data = databaseRequest($db, "SELECT * FROM trajets WHERE site_isen LIKE :destination_isen AND depart_isen = 0;",[":destination_isen"=> $_GET['destination_isen']]);
             }
         }
-        /*else if($methodeRequete == 'POST'){
+        else if($methodeRequete == 'POST'){
 
             $date_heure_depart = $_POST['date_heure_depart'];
             $date_heure_arrivee = $_POST['date_heure_arrivee'];
@@ -115,12 +121,20 @@
                 :depart_isen,
                 :code_insee,
                 :site_isen,
-                ;pseudo); COMMIT;",[
+                ;pseudo_conducteur); COMMIT;",[
                 
-                ":date_heure_depart"=> $_GET['depart']
-
+                ":date_heure_depart"=> $date_heure_depart,
+                ":date_heure_arrivee"=> $date_heure_arrivee,
+                ":nb_places_max"=> $nb_places_max,
+                ":nb_places_restantes"=> $nb_places_restantes,
+                ":prix"=> $prix,
+                ":adresse"=> $adresse,
+                ":depart_isen"=> $depart_isen,
+                ":code_insee"=> $code_insee,
+                ":site_isen"=> $site_isen,
+                ":pseudo_conducteur"=> $pseudo_conducteur
             ]);
-        }*/
+        }
     }
 
 
