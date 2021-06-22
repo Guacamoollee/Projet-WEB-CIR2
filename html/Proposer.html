@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="../css/proposer.css"/>
         <link rel="stylesheet" href="../css/formulaire.css">
         <link rel="stylesheet" href="../css/en_tete.css">
+        <script src="../js/site.js" defer></script>
+        <script src="../js/ajax.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
@@ -53,17 +55,18 @@
             <!--menu déroulant connecté à la base donnée avec les différents site isen-->
             <select name="Site de depart" id="depart"> 
               <option value="">veuillez choisir</option>
-              <option value="Brest">Brest</option>
             </select>
             <br/> <br/>
 
-            <!--menu déroulant connecté à la base donnée avec les différents site isen-->
-            <p>veuillez choisir votre site</p>
-            <select name="Site d'arrivée" id="arrivée"> 
-              <option value="">veuillez choisir</option>
-              <option value="Brest">Brest</option>
-            </select>
+            <!--addresse-->
+            <p>Addresse :</p>
+            <input type="text" id="addr">
             <br/> <br/>
+
+            <p>Commune :</p>
+            <input type="text" id="Commune">
+            <br/> <br/>
+
 
             <p>Nombre de place:</p>
             <!--choix du nombre de place disponible pour le trajet-->
