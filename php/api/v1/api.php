@@ -82,8 +82,9 @@
                 $data = databaseRequest($db, "SELECT * FROM trajets WHERE id_trajet = :id_trajet;",[":id_trajet"=> $resourceDemande]);
                 // echo 'test';
             }
-            else if(isset($_GET['destination']) && isset($_GET['isen_depart'])){// si il n'y à rien cela veux daire que l'on fait une recherche par départ ou destination
-                $data = databaseRequest($db, 
+            else if(isset($_GET['destination']) && isset($_GET['isen_depart'])){//si l'on ne cherche pas par trajet spécifique, nous recherchons par destination et origine
+                $data = databaseRequest($db,
+
                     "SELECT * FROM trajets t 
                     JOIN ville v ON t.code_insee = v.code_insee 
                     WHERE v.commune LIKE :destination 
@@ -92,12 +93,11 @@
                     
                     [":destination"=> $_GET['destination'], ":isen_depart"=> $_GET['isen_depart']]
                 );
-                // echo 'TEST';
-                // echo $_GET['destination'];
-                // echo $data;
+                
             }
             else if(isset($_GET['depart']) && isset($_GET['isen_destinataire'])){ 
                 $data = databaseRequest($db, 
+
                     "SELECT * FROM trajets t 
                     JOIN ville v ON t.code_insee = v.code_insee 
                     WHERE v.commune LIKE :depart 
@@ -106,13 +106,7 @@
 
                     [":depart"=> $_GET['depart'], ":isen_destinataire"=> $_GET['isen_destinataire']]
                 );
-            }/*
-            else if(isset($_GET['depart_isen']) ){//pour chercher les trajets au départ de l'isen
-                $data = databaseRequest($db, "SELECT * FROM trajets WHERE site_isen LIKE :depart_isen AND depart_isen = 1;",[":depart_isen"=> $_GET['depart_isen']]);
             }
-            else if(isset($_GET['destination_isen'])){
-                $data = databaseRequest($db, "SELECT * FROM trajets WHERE site_isen LIKE :destination_isen AND depart_isen = 0;",[":destination_isen"=> $_GET['destination_isen']]);
-            }*/
         }
         else if($methodeRequete == 'POST'){
 
