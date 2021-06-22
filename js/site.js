@@ -1,7 +1,10 @@
 'use strict';
 
-ajaxRequest('GET', 'php/apiBDD/v1/api.php/isen', displayPolls);
+ajaxRequest('GET', '../php/api/v1/api.php/isen', affiche_isen);
 
-function displayPolls(poll){
-    $('poll-title').html(poll.title + '<span class=badge badge-pill badge-primary float-right">' + poll.participants + '<span>');
+function affiche_isen(poll){
+    console.log(poll);
+    for(let isen of poll){
+    $('#depart').append('<option value="'+isen.site_isen+'"> '+isen.site_isen+' </option>' );
+    }
 }
