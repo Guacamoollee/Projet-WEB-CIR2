@@ -4,79 +4,88 @@
     <head>
         <title>Accueil</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="../css/en_tete.css"/>
+        <link rel="stylesheet" href="../css/proposer.css"/>
         <link rel="stylesheet" href="../css/formulaire.css">
-        <link rel="icon" type="image/png" sizes="16x16" href="Logo/LOGO_Hippo_2_White.png">
-        <script src="../js/recherche.js" defer></script>
-        <script src="js/ajax.js"></script>
+        <link rel="stylesheet" href="../css/en_tete.css">
+        
+        <script src="../js/ajax.js" defer></script>
+        <script src="../js/proposer.js" defer></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
         <header>
+            <a class="logo" href="../html/index.html"><img src="../Logo/LOGO_Hippo_2_White.png" alt="logo"></a>
             <nav>
                 <ul class="nav__links">
-                    <li><a href="../index.html">Rechercher un trajet</a></li>
-                    <li><a href="Proposer.html">Proposer un trajet</a></li>
+                    <li><a href="../html/index.html">Rechercher un trajet</a></li>
+                    <li><a href="../html/Proposer.html">Proposer un trajet</a></li>
                 </ul>
             </nav>
-            <a class="cta" href="register.html">Login</a>
+            <a class="cta" href="../html/register.html">Login</a>
         </header>
         <main>
           <br/>
           <!--Formulaire pour proposer un trajet-->
-          <form class="formulaire">
+          <form class="formulaire" id='proposition'>
             <label for="start">Date de départ</label>
             <br/>
 
             <!--Date de départ-->
-            <input type="date" id="départ" name="date_depart" value="2020-01-01" min="2020-01-01" max="2022-12-31">
+            <input type="date" id="depart" name="date_depart" value="2020-01-01" min="2020-01-01" max="2022-12-31" required>
             <br/><br/>
             <label for="start">Date de d'arrivée</label>
             <br/>
 
             <!--Date de d'arrivée-->
-            <input type="date" id="arrivée" name="date_arrivée" value="2020-01-01" min="2020-01-01" max="2022-12-31">
+            <input type="date" id="arrivee" name="date_arrivee" value="2020-01-01" min="2020-01-01" max="2022-12-31" required>
             <br/><br/>
             <label for="start">Heure de départ</label>
             <br/>
 
             <!--heure de départ-->
-            <input type="time" id="heure_départ" name="heure_départ" >
+            <input type="time" id="heure_depart" name="heure_depart" required>
             <br/><br/>
             <label for="start">Heure d'arrivée</label>
             <br/>
 
             <!--heure d'arrivée-->
-            <input type="time" id="heure_arrivée" name="heure_arrivée" >
+            <input type="time" id="heure_arrivee" name="heure_arrivee" required>
+            <br/> <br/>
+
+            <p>veuillez choisir la direction de votre trajet</p>
+            <select name="sens" id="sens_trajet" required> 
+              <option value="0">Allez vers l'ISEN</option>
+              <option value="1">Partir depuis l'ISEN</option>
+            </select>
             <br/> <br/>
 
             <p>veuillez choisir votre site</p>
             <!--menu déroulant connecté à la base donnée avec les différents site isen-->
-            <select name="Site de depart" id="depart"> 
-              <option value="">veuillez choisir</option>
+            <select name="Site de depart" id="site_isen" required> 
+              <option disabled value="">veuillez choisir</option>
             </select>
             <br/> <br/>
 
             <!--addresse-->
             <p>Addresse :</p>
-            <input type="text" id="addr">
+            <input type="text" id="adr" required>
             <br/> <br/>
-            <!--Commune-->
-            <p>Commune :</p>
-            <input type="text" id="Commune">
+
+            <p>Code Postale :</p>
+            <input type="text" id="code_postal" required>
             <br/> <br/>
 
 
             <p>Nombre de place:</p>
             <!--choix du nombre de place disponible pour le trajet-->
-            <input type="number" id="place" name="place" min="1" max="5">
+            <input type="number" id="place" name="place" min="1" max="5" required>
             <br/><br/>
             
             <p>Prix:</p>
             <!--prix par personne-->
-            <input id="prix" name="prix">
+            <input id="prix" name="prix" required>
             <br/> <br/>
-            <button>Valider</button>
+            <button type="submit">Valider</button>
           </form>
           
         </main>
@@ -93,8 +102,8 @@
                 <h3>Liens</h3>
                 <div class="border1"></div> 
                   <ul>
-                    <a href="../index.html"><li>Rechercher un trajet</li></a>
-                    <a href="Proposer.html"><li>Proposer un trajet</li></a>
+                    <a href="../html/index.html"><li>Rechercher un trajet</li></a>
+                    <a href="../html/Proposer.html"><li>Proposer un trajet</li></a>
                   </ul>
               </div>
           
