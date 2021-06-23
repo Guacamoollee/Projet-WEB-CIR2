@@ -1,7 +1,8 @@
 <?php
     require_once('fonctions.php');
+    require_once('config.php');
 
-    $db = databaseConnect("localhost", "user4", "root", "");
+    $db = databaseConnect(DB_SERVER, DB_NAME, DB_USER, DB_PASSWORD);
 
 	//En cas de problème de connection à la database, on retourne directement une erreur 503.
 	if(!$db){
@@ -120,6 +121,13 @@
             $code_insee = $_POST['code_insee'];
             $site_isen = $_POST['site_isen'];
             $pseudo_conducteur = $_POST['pseudo_conducteur'];
+
+            //on test si tout est set
+            if( !(isset($_POST['date_heure_depart']) && isset($_POST['date_heure_arrivee']) && isset($_POST['nb_places_max']) && isset($_POST['nb_places_rest']) && isset($_POST['prix']) && isset($_POST['adresse']) && isset($_POST['depart_isen']) && isset($_POST['code_insee']) && isset($_POST['site_isen']) && isset($_POST['pseudo_conducteur'])) ) {
+                header("HTTP/1.1 400");
+                exit();
+            }
+            vardump($_POST);
 
             $data = databaseRequest($db, "INSERT INTO trajets(date_heure_depart,date_heure_arrivee,nb_places_max,nb_places_restantes,prix,adresse,depart_isen,code_insee,site_isen,pseudo) VALUES (
                 :date_heure_depart,
