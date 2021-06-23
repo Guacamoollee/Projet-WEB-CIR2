@@ -25,16 +25,15 @@ console.log(event);
 function info(vaar){
     $('#resultat').html('')
     for(let vaars of vaar){
-        $('#resultat').append('<p>Pseudo: '+vaars.pseudo+ '</p></div><br>')//affichage du pseudo 
-        $('#resultat').append('<p> Adresse: '+vaars.adresse+'</p><br>')//affichage de l'adresse
-        $('#resultat').append('<p> Commune: '+vaars.commune+'</p><br>')//affichage de la commune
-        $('#resultat').append('<p> Code Postal: '+vaars.code_postal+'</p><br>')//affichage du code postal
-        $('#resultat').append('<p> ISEN: '+vaars.site_isen+'</p><br>')//affichage du site ISEN
-        $('#resultat').append('<p> Date et heure de départ: '+vaars.date_heure_depart+'</p><br>')// affichage de l'heure de départ
-        $('#resultat').append('<p> Date et heure d arrivée: '+vaars.date_heure_arrivee+'</p><br>')// affichage de l'heure d'arrivée
-        $('#resultat').append('<p> Nombre de place:'+vaars.nb_places_max+'</p><br>')//affichage du nombre de place
-        $('#resultat').append('<p> Prix : '+vaars.prix+'€</p><br>')//affichage du prix
-        $('#resultat').append('<input type=submit value=reserver id='+vaars.id_trajet+'></input>')// boutton reserver 
+        $('#resultat').append('<div style="text-align: center" ><p>Pseudo: '+vaars.pseudo+ '</p></div><br>')//affichage du pseudo 
+        $('#resultat').append('<div style="text-align: center" ><p> Adresse: '+vaars.adresse+'</p></div><br>')//affichage de l'adresse
+        $('#resultat').append('<div style="text-align: center" ><p>Commune: '+vaars.commune+'</p></div><br>')//affichage de la commune
+        $('#resultat').append('<div style="text-align: center" ><p> Code Postal: '+vaars.code_postal+'</p></div><br>')//affichage du code postal
+        $('#resultat').append('<div style="text-align: center" ><p> ISEN: '+vaars.site_isen+'</p></div><br>')//affichage du site ISEN
+        $('#resultat').append('<div style="text-align: center" ><p> Date et heure de départ: '+vaars.date_heure_depart+'</p></div><br>')// affichage de l'heure de départ
+        $('#resultat').append('<div style="text-align: center" ><p> Date et heure d arrivée: '+vaars.date_heure_arrivee+'</p></div><br>')// affichage de l'heure d'arrivée
+        $('#resultat').append('<div style="text-align: center" ><p> Nombre de place:'+vaars.nb_places_max+'</p></div><br>')//affichage du nombre de place
+        $('#resultat').append('<div style="text-align: center" ><p> Prix : '+vaars.prix+'€</p></div><br>')//affichage du prix
+        $('#resultat').append('<div style="text-align: center" ><input type=submit value=reserver id='+vaars.id_trajet+'></input></div>')// boutton reserver 
     }   
 }
-
