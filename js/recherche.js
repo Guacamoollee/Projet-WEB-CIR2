@@ -1,5 +1,13 @@
 'use strict';
 
+ajaxRequest('GET', '../php/api/v1/api.php/isen', affiche_isen);
+
+//fonction qui permet d'affiche les site isen dans le select de la page html
+function affiche_isen(poll){
+    for(let isen of poll){
+    $('#depart').append('<option value="'+isen.site_isen+'"> '+isen.site_isen+' </option>' );
+    }
+}
 $('#boutton').click((event) =>
   {
     console.log(event);
