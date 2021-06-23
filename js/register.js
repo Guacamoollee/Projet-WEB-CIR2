@@ -15,17 +15,3 @@ $(".enregistrement_li").click(function(){
    $(".connexion").hide();
 })
 
-/*$('#tweet-add').submit((event) =>
-  {
-    event.preventDefault();
-    ajaxRequest('POST', 'php/api.php/utilisateur', () =>
-      {
-
-      },
-    //$('#tweet').val('');
-  }
-);*/
-$('#inscription').submit((event) =>  {
-  event.preventDefault();
-  ajaxRequest('POST', 'php/api.php/utilisateur', null);
-})
