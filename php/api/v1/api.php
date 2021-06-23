@@ -45,13 +45,13 @@
             }
         }        
     }
-/*
-    else if($resourceDemande == 'utilisateur'){
+
+    else if($resourceDemande == 'utilisateur'){//ne fonctionne pas
 
         if($methodeRequete == 'GET'){
             $resourceDemande = array_shift($requete); //on prend la resources suivante
             $data = databaseRequest($db, "SELECT * FROM utilisateurs WHERE pseudo =:pseudo;",[":pseudo"=> $resourceDemande]);
-            //a modif si besoin recherche partiel
+            //a modif si besoin recherche partiel (remplacer le = du WHERE par LIKE)
         }
         
         else if($methodeRequete == 'POST'){
@@ -73,7 +73,7 @@
         }
         
     }
-*/
+
     else if($resourceDemande == 'trajets'){
 
         if($methodeRequete == 'GET'){
@@ -111,27 +111,31 @@
         }
         else if($methodeRequete == 'POST'){
 
-            $date_heure_depart = $_POST['date_heure_depart'];
-            $date_heure_arrivee = $_POST['date_heure_arrivee'];
-            $nb_places_max = $_POST['nb_places_max'];
-            $nb_places_rest = $_POST['nb_places_rest'];
-            $prix = $_POST['prix'];
-            $adresse = $_POST['adresse'];
-            $depart_isen = $_POST['depart_isen'];
-            $code_insee = $_POST['code_insee'];
-            $site_isen = $_POST['site_isen'];
-            $pseudo_conducteur = $_POST['pseudo_conducteur'];
+            
 
             //on test si tout est set
             if( !(isset($_POST['date_heure_depart']) && isset($_POST['date_heure_arrivee']) && isset($_POST['nb_places_max']) && isset($_POST['nb_places_rest']) && isset($_POST['prix']) && isset($_POST['adresse']) && isset($_POST['depart_isen']) && isset($_POST['code_insee']) && isset($_POST['site_isen']) && isset($_POST['pseudo_conducteur'])) ) {
                 header("HTTP/1.1 400");
                 exit();
             }
-            vardump($_POST);
+            
 
-            $data = databaseRequest($db, "INSERT INTO trajets(date_heure_depart,date_heure_arrivee,nb_places_max,nb_places_restantes,prix,adresse,depart_isen,code_insee,site_isen,pseudo) VALUES (
+            $date_heure_depart = $_POST['date_heure_depart'];
+            $date_heure_arrivee = $_POST['date_heure_arrivee'];
+            $nb_places_max = (int)$_POST['nb_places_max'];
+            $nb_places_rest = (int)$_POST['nb_places_rest'];
+            $prix = (float)$_POST['prix'];
+            $adresse = $_POST['adresse'];
+            $depart_isen = (int)$_POST['depart_isen'];
+            $code_insee = (int)$_POST['code_insee'];
+            $site_isen = $_POST['site_isen'];
+            $pseudo_conducteur = $_POST['pseudo_conducteur'];
+
+            var_dump($_POST);
+
+            $data = databaseRequest($db, "INSERT INTO trajets (date_heure_depart,date_heure_arrivee,nb_places_max,nb_places_restantes,prix,adresse,depart_isen,code_insee,site_isen,pseudo) VALUES (
                 :date_heure_depart,
-                :date_heure_arrivee,:
+                :date_heure_arrivee,
                 :nb_places_max,
                 :nb_places_restantes,
                 :prix,
@@ -144,7 +148,7 @@
                 ":date_heure_depart"=> $date_heure_depart,
                 ":date_heure_arrivee"=> $date_heure_arrivee,
                 ":nb_places_max"=> $nb_places_max,
-                ":nb_places_restantes"=> $nb_places_restantes,
+                ":nb_places_restantes"=> $nb_places_rest,
                 ":prix"=> $prix,
                 ":adresse"=> $adresse,
                 ":depart_isen"=> $depart_isen,
