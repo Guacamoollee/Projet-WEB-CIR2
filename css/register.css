@@ -1,25 +1,27 @@
 
-.tout{
 
+.tout{
+  
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   outline: none;
   text-decoration: none;
   list-style: none;
-  font-family: 'Nunito', sans-serif;
+
 }
 
 .emballage{
-  display: flex;
-  max-width: 560px;
+  display:flex;
+  max-width: 500px;
   width: 100%;
   height: 350px;
-  position: absolute;
-  top: 40%;
+  position:absolute;
+  top: 500%;
   left:50%;
   transform: translate(-50%,-50%);
 }
+
 
 .emballage .gauche,
 .emballage .droite{

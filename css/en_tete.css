@@ -1,15 +1,10 @@
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    
+
   }
- 
-  img{
-    width:80px;
-    height:80px;
-  }
+
 
   header {
     display: flex;
@@ -19,9 +14,7 @@
     background-color: #24252a;
   }
   
-  .logo {
-    cursor: pointer;
-  }
+
   
 
 
@@ -40,7 +33,8 @@
   }
   
   .nav__links li {
-    padding: 0px 20px;
+    padding: 0px 0px;
+	margin-left: 20px;
   }
   
   .nav__links li a {
